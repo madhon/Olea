@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.GrainInterfaces", "IoT.GrainInterfaces\IoT.GrainInterfaces.csproj", "{078439C1-EBF2-4F1C-B7AE-986683D84EA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.GrainImplementation", "IoT.GrainImplementation\IoT.GrainImplementation.csproj", "{740AF629-9745-4088-9BD4-A4B47C7AC54E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WebApp", "IoT.WebApp\IoT.WebApp.csproj", "{88431070-2DE9-434B-9B32-D6AC0B95A92D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.SiloHostApp", "IoT.SiloHostApp\IoT.SiloHostApp.csproj", "{339709E9-C77F-4902-B6A1-6D32D6424457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.ClientApi", "IoT.ClientApi\IoT.ClientApi.csproj", "{B7716BD5-3A7A-4D50-B222-4937CE9017C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.ClientApi.ConsoleApp", "IoT.ClientApi.ConsoleApp\IoT.ClientApi.ConsoleApp.csproj", "{EBC46BE8-AB69-403D-866C-48E33387F362}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{078439C1-EBF2-4F1C-B7AE-986683D84EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{078439C1-EBF2-4F1C-B7AE-986683D84EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{078439C1-EBF2-4F1C-B7AE-986683D84EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{078439C1-EBF2-4F1C-B7AE-986683D84EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{740AF629-9745-4088-9BD4-A4B47C7AC54E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{740AF629-9745-4088-9BD4-A4B47C7AC54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{740AF629-9745-4088-9BD4-A4B47C7AC54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{740AF629-9745-4088-9BD4-A4B47C7AC54E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88431070-2DE9-434B-9B32-D6AC0B95A92D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88431070-2DE9-434B-9B32-D6AC0B95A92D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88431070-2DE9-434B-9B32-D6AC0B95A92D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88431070-2DE9-434B-9B32-D6AC0B95A92D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{339709E9-C77F-4902-B6A1-6D32D6424457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{339709E9-C77F-4902-B6A1-6D32D6424457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{339709E9-C77F-4902-B6A1-6D32D6424457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{339709E9-C77F-4902-B6A1-6D32D6424457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7716BD5-3A7A-4D50-B222-4937CE9017C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7716BD5-3A7A-4D50-B222-4937CE9017C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7716BD5-3A7A-4D50-B222-4937CE9017C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7716BD5-3A7A-4D50-B222-4937CE9017C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBC46BE8-AB69-403D-866C-48E33387F362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBC46BE8-AB69-403D-866C-48E33387F362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBC46BE8-AB69-403D-866C-48E33387F362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBC46BE8-AB69-403D-866C-48E33387F362}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
