@@ -111,11 +111,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OrleansConfiguration.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\IoT.GrainImplementation\IoT.GrainImplementation.csproj">
       <Project>{740af629-9745-4088-9bd4-a4b47c7ac54e}</Project>
       <Name>IoT.GrainImplementation</Name>

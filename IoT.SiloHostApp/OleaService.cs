@@ -1,8 +1,11 @@
 ﻿namespace IoT.SiloHostApp
 {
     using System;
+    using System.Collections.Generic;
     using System.Net;
+    using Orleans.Runtime.Configuration;
     using Orleans.Runtime.Host;
+    using Orleans.Storage;
     using Topshelf;
 
     public class OleaService : ServiceControl
@@ -26,7 +29,12 @@
         {
             try
             {
-                host = new SiloHost(Dns.GetHostName()) { ConfigFileName = "OrleansConfiguration.xml" };
+                var config = ClusterConfiguration.LocalhostPrimarySilo();
+                var props = new Dictionary<string, string>();
+                config.Globals.RegisterStorageProvider<MemoryStorage>("MemoryStore", props);
+
+                host = new SiloHost(Dns.GetHostName(), config);
+
                 host.InitializeOrleansSilo();
                 var initOk = host.StartOrleansSilo();
 
