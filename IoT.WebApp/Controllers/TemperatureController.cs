@@ -3,6 +3,7 @@
     using System.Threading.Tasks;
     using System.Web.Http;
     using Halcyon.HAL;
+    using Halcyon.WebApi.HAL;
     using IoT.GrainInterfaces;
     using IoT.WebApp.Model;
     using Orleans;

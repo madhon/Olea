@@ -10,7 +10,6 @@
         public static void Main()
         {
             AsyncContext.Run(() => MainAsync());
-
         }
 
         private static async Task MainAsync()
@@ -23,9 +22,6 @@
             var res = await api.GetTemperatureAsync(1).ConfigureAwait(false);
 
             Debugger.Break();
-
-
-
         }
     }
 }

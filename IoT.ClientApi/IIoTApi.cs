@@ -1,9 +1,9 @@
 ﻿namespace IoT.ClientApi
 {
     using System.Threading.Tasks;
-    using Refit;
+    using RestEase;
 
-    [Headers("User-Agent: IoTConsole")]
+    [Header("User-Agent: IoTConsole")]
     public interface IIoTApi
     {
         [Get("/api/temperature/{id}")]
