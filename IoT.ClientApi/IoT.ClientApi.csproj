@@ -36,8 +36,8 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="RestEase, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestEase.1.1.2\lib\net45\RestEase.dll</HintPath>
+    <Reference Include="RestEase, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestEase.1.2.2\lib\net45\RestEase.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
