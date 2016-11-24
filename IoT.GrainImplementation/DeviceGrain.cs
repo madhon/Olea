@@ -15,12 +15,12 @@ namespace IoT.GrainImplementation
             var id = this.GetPrimaryKeyLong();
             if (value >= MAX_TEMP && temp <= MAX_TEMP)
             {
-                Console.WriteLine($"Temperature threshold exceeded for device {id}");
+                Console.WriteLine($"Temperature threshold exceeded for device {id.ToString()}");
             }
 
             if (value < MAX_TEMP && temp > MAX_TEMP)
             {
-                Console.WriteLine($"Temperature back to normal for device {id}");
+                Console.WriteLine($"Temperature back to normal for device {id.ToString()}");
             }
 
             this.temp = value;

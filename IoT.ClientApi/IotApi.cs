@@ -17,9 +17,6 @@
             await api.PostTemperatureAsync(id, value).ConfigureAwait(false);
         }
 
-        public static IIoTApi Create()
-        {
-            return new IotApi();
-        }
+        public static IIoTApi Create() => new IotApi();
     }
 }

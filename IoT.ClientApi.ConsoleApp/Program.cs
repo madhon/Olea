@@ -3,14 +3,10 @@
     using System;
     using System.Diagnostics;
     using System.Threading.Tasks;
-    using Nito.AsyncEx;
 
     public class Program
     {
-        public static void Main()
-        {
-            AsyncContext.Run(() => MainAsync());
-        }
+        public static void Main() => MainAsync().GetAwaiter().GetResult();
 
         private static async Task MainAsync()
         {
