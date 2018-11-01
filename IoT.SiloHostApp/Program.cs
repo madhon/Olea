@@ -1,20 +1,18 @@
 ﻿namespace IoT.SiloHostApp
 {
-    using System;
     using Topshelf;
 
-    public class Program
+    public static class Program
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
             HostFactory.Run(x =>
             {
-                x.Service<OleaService>();
-                x.SetServiceName("OleaSiloHost");
-                x.SetDescription("Olea Silo Host");
+                x.Service<SiloHostService>();
                 x.StartAutomatically();
-                x.RunAsNetworkService();
-                x.EnableServiceRecovery(rc => rc.RestartService(1));
+                x.RunAsVirtualServiceAccount();
+                x.SetServiceName("IOT.SiloHostApp");
+                x.SetDisplayName("IOT.SiloHostApp");
             });
         }
     }

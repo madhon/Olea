@@ -1,49 +1,45 @@
 ﻿namespace IoT.WebApp.Controllers
 {
+    using System;
     using System.Threading.Tasks;
-    using System.Web.Http;
-    using Halcyon.HAL;
-    using Halcyon.WebApi.HAL;
-    using IoT.GrainInterfaces;
-    using IoT.WebApp.Model;
+    using GrainInterfaces;
+    using Microsoft.AspNetCore.Mvc;
     using Orleans;
+    using Model;
 
-    /// <summary>
-    /// Orleans Temperature API
-    /// </summary>
-    [RoutePrefix("api/temperature")]
-    public class TemperatureController : ApiController
+    [ApiController]
+    [Route("api/temperature")]
+    public class TemperatureController : ControllerBase
     {
-        /// <summary>
-        /// Get The Temperature from the given sensor
-        /// </summary>
-        /// <param name="id">Sensor ID</param>
-        /// <returns>Current Temperature</returns>
-        [HttpGet, Route("{id:int}")]
-        public async Task<IHttpActionResult> GetTemperatureAsync(int id)
+        private readonly IClusterClient clusterClient;
+
+        public TemperatureController(IClusterClient clusterClient)
         {
-            var grain = GrainClient.GrainFactory.GetGrain<IDeviceGrain>(id);
+            this.clusterClient = clusterClient;
+        }
+
+        [HttpGet, Route("{id:int}")]
+        public async Task<ActionResult> GetTemperatureAsync(int id)
+        {
+
+            var grain = clusterClient.GetGrain<IDeviceGrain>(id);
+
             var model = new TemperatureResultModel
             {
                 Id = id,
                 Value = await grain.GetTemperatureAsync().ConfigureAwait(false)
             };
 
-            return this.HAL(model, new[] { new Link("self", "/api/temperature/{Id}") });
+            return Ok(model);
         }
 
-        /// <summary>
-        /// Set the given sensors temperature value
-        /// </summary>
-        /// <param name="id">Sensor ID</param>
-        /// <param name="value">Current Temperature</param>
-        /// <returns></returns>
         [HttpPost, Route("{id:int}")]
-        public async Task<IHttpActionResult> PostTemperatureAsync(int id, [FromBody] double value)
+        public async Task<ActionResult> PostTemperatureAsync(int id, [FromBody] double value)
         {
-            var grain = GrainClient.GrainFactory.GetGrain<IDeviceGrain>(id);
+            var grain = clusterClient.GetGrain<IDeviceGrain>(id);
             await grain.SetTemperatureAsync(value).ConfigureAwait(false);
             return Ok();
         }
+
     }
 }

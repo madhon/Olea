@@ -1,9 +1,9 @@
-namespace IoT.GrainImplementation
+﻿namespace IoT.GrainImplementation
 {
     using System;
     using System.Threading.Tasks;
+    using GrainInterfaces;
     using Orleans;
-    using IoT.GrainInterfaces;
 
     public class DeviceGrain : Grain, IDeviceGrain
     {
@@ -25,7 +25,7 @@ namespace IoT.GrainImplementation
 
             this.temp = value;
 
-            return TaskDone.Done;
+            return Task.CompletedTask;
         }
 
         public Task<double> GetTemperatureAsync()
