@@ -13,7 +13,7 @@
 
     public class Startup
     {
-        private IHostingEnvironment env;
+        private readonly IHostingEnvironment env;
         public IConfiguration Configuration { get; private set; }
 
         public Startup(IConfiguration config, IHostingEnvironment env)
@@ -32,7 +32,7 @@
                     .AllowCredentials());
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddJsonOptions(options =>
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(options =>
             {
                 if (env.IsDevelopment())
                 {
@@ -44,7 +44,7 @@
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
 
-            services.AddSingleton<IClusterClient>(CreateClusterClient);
+            services.AddSingleton(CreateClusterClient);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
