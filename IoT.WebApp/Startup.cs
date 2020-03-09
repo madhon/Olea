@@ -3,9 +3,9 @@
     using System;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
     using Microsoft.Extensions.Logging;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Serialization;
@@ -13,10 +13,10 @@
 
     public class Startup
     {
-        private readonly IHostingEnvironment env;
+        private readonly IWebHostEnvironment env;
         public IConfiguration Configuration { get; private set; }
 
-        public Startup(IConfiguration config, IHostingEnvironment env)
+        public Startup(IConfiguration config, IWebHostEnvironment env)
         {
             this.env = env;
             this.Configuration = config;
@@ -32,30 +32,24 @@
                     .AllowCredentials());
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(options =>
-            {
-                if (env.IsDevelopment())
-                {
-                    options.SerializerSettings.Formatting = Formatting.Indented;
-                }
-
-                options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-                options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            });
+            services.AddControllersWithViews();
 
             services.AddSingleton(CreateClusterClient);
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseRouting();
 
-            app.UseMvc();
+            app.UseEndpoints(endpoints => 
+            {
+              endpoints.MapDefaultControllerRoute();
+            });
         }
 
         private IClusterClient CreateClusterClient(IServiceProvider serviceProvider)

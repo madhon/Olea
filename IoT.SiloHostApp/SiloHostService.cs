@@ -1,27 +1,15 @@
 ﻿namespace IoT.SiloHostApp
 {
+    using System.Threading;
+    using System.Threading.Tasks;
     using GrainImplementation;
+    using Microsoft.Extensions.Hosting;
     using Orleans.Configuration;
     using Orleans.Hosting;
-    using Topshelf;
 
-    public class SiloHostService : ServiceControl
+    public class SiloHostService : IHostedService
     {
         private ISiloHost host;
-
-        public bool Start(HostControl hostControl)
-        {
-            BuildSilo();
-
-            host.StartAsync().GetAwaiter().GetResult();
-            return true;
-        }
-
-        public bool Stop(HostControl hostControl)
-        {
-            host.StopAsync().GetAwaiter().GetResult();
-            return true;
-        }
 
         private void BuildSilo()
         {
@@ -33,12 +21,20 @@
                 {
                     options.ClusterId = "dev";
                     options.ServiceId = "IOTApp";
-                })
-                //.ConfigureApplicationParts(parts => parts.AddApplicationPart(t.Assembly).WithReferences())
-                .EnableDirectClient();
+                });
 
             host = builder.Build();
         }
 
+        public async Task StartAsync(CancellationToken cancellationToken)
+        {
+            BuildSilo();
+            await host.StartAsync(cancellationToken);
+        }
+
+        public async Task StopAsync(CancellationToken cancellationToken)
+        {
+            await host.StopAsync(cancellationToken);
+        }
     }
 }
