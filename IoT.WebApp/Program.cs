@@ -1,7 +1,6 @@
 ﻿namespace IoT.WebApp
 {
-  using System;
-  using System.IO;
+
   using Microsoft.AspNetCore.Hosting;
   using Microsoft.Extensions.Hosting;
 
