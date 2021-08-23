@@ -4,6 +4,7 @@
     <TargetFramework>net50</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <LanguageVersion>Latest</LanguageVersion>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Orleans.Core" Version="3.4.1" />
+    <PackageReference Include="Microsoft.Orleans.Core" Version="3.4.3" />
   </ItemGroup>
 
   <ItemGroup>
