@@ -3,8 +3,9 @@
   <PropertyGroup>
     <TargetFramework>net60</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <LanguageVersion>Latest</LanguageVersion>
+    <LanguageVersion>10.0</LanguageVersion>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	  <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,20 +1,26 @@
-﻿namespace IoT.WebApp
+﻿var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
 {
+    options.AddPolicy("AllowAny", builder => builder.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials());
+});
 
-  using Microsoft.AspNetCore.Hosting;
-  using Microsoft.Extensions.Hosting;
+builder.Services.AddControllers();
 
-    public class Program
-    {
-        public static void Main(string[] args) => CreateHostBuilder(args).Build().Run();
+builder.Services.AddOrleans();
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.ConfigureKestrel((bc, o) => { o.AddServerHeader = false; })
-                      //.UseWebRoot(webRoot)
-                      .UseStartup<Startup>();
-                });
-    }
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
 }
+
+app.UseRouting();
+app.MapDefaultControllerRoute();
+
+
+app.Run();

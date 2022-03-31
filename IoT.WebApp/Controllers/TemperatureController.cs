@@ -1,6 +1,5 @@
 ﻿namespace IoT.WebApp.Controllers
 {
-    using System;
     using System.Threading.Tasks;
     using GrainInterfaces;
     using Microsoft.AspNetCore.Mvc;
@@ -19,7 +18,7 @@
         }
 
         [HttpGet, Route("{id:int}")]
-        public async Task<ActionResult> GetTemperatureAsync(int id)
+        public async Task<IActionResult> GetTemperatureAsync(int id)
         {
 
             var grain = clusterClient.GetGrain<IDeviceGrain>(id);
@@ -34,7 +33,7 @@
         }
 
         [HttpPost, Route("{id:int}")]
-        public async Task<ActionResult> PostTemperatureAsync(int id, [FromBody] double value)
+        public async Task<IActionResult> PostTemperatureAsync(int id, [FromBody] double value)
         {
             var grain = clusterClient.GetGrain<IDeviceGrain>(id);
             await grain.SetTemperatureAsync(value).ConfigureAwait(false);

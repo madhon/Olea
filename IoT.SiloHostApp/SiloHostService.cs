@@ -29,12 +29,12 @@
         public async Task StartAsync(CancellationToken cancellationToken)
         {
             BuildSilo();
-            await host.StartAsync(cancellationToken);
+            await host.StartAsync(cancellationToken).ConfigureAwait(false);
         }
 
         public async Task StopAsync(CancellationToken cancellationToken)
         {
-            await host.StopAsync(cancellationToken);
+            await host.StopAsync(cancellationToken).ConfigureAwait(false);
         }
     }
 }
