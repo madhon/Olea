@@ -28,11 +28,11 @@
             return Task.CompletedTask;
         }
 
-        public Task<double> GetTemperatureAsync()
+        public ValueTask<double> GetTemperatureAsync()
         {
             Console.WriteLine(IdentityString);
             Console.WriteLine("GetTemperatureAsync Called");
-            return Task.FromResult(this.temp);
+            return new ValueTask<double>(temp);
         }
     }
 }

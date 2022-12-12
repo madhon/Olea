@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2048
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.ClientApi.ConsoleApp", "IoT.ClientApi.ConsoleApp\IoT.ClientApi.ConsoleApp.csproj", "{7EC17930-50C9-4358-BD2B-1EB85BF4EACF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.ClientApi.ConsoleApp", "IoT.ClientApi.ConsoleApp\IoT.ClientApi.ConsoleApp.csproj", "{7EC17930-50C9-4358-BD2B-1EB85BF4EACF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.WebApp", "IoT.WebApp\IoT.WebApp.csproj", "{2569BBF3-1995-44EA-BC38-5B225DF28333}"
 EndProject
@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SiloHostApp", "IoT.Silo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.ClientApi", "IoT.ClientApi\IoT.ClientApi.csproj", "{D298F62F-E4B2-4384-8340-F011484D77D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.GrainImplementation", "IoT.GrainImplementation\IoT.GrainImplementation.csproj", "{B412A937-58BD-46FB-AB11-AAA2E6C36CEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.GrainImplementation", "IoT.GrainImplementation\IoT.GrainImplementation.csproj", "{B412A937-58BD-46FB-AB11-AAA2E6C36CEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B9AB2D7-5342-492B-A305-1A84D8D7D2B5}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
