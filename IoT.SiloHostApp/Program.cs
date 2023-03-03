@@ -1,21 +1,12 @@
-﻿namespace IoT.SiloHostApp
-{
-    using Microsoft.Extensions.Hosting;
-    using Microsoft.Extensions.Logging;
-    using Orleans.Hosting;
+﻿Console.Title = "SilHost";
 
-    public static class Program
+
+await Host.CreateDefaultBuilder()
+    .UseWindowsService()
+    .UseOrleans(builder =>
     {
-        public static void Main(string[] args) => CreateHostBuilder(args).Build().Run();
+        builder.UseLocalhostClustering(clusterId: "dev", serviceId: "IOTApp");
+    })
+    .ConfigureLogging(logging => logging.AddConsole())
+    .RunConsoleAsync();
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .UseWindowsService()
-                .UseOrleans(silo =>
-                {
-                    silo.UseLocalhostClustering(clusterId: "dev", serviceId: "IOTApp")
-                        .ConfigureLogging(logging => logging.AddConsole());
-                });
-
-    }
-}

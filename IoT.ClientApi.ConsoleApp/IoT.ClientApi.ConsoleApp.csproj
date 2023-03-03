@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net70</TargetFramework>
+	  <LanguageVersion>11.0</LanguageVersion>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
 
