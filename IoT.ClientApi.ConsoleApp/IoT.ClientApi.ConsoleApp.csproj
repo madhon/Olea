@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net70</TargetFramework>
-	  <LanguageVersion>11.0</LanguageVersion>
+    <TargetFramework>net80</TargetFramework>
+	  <LanguageVersion>12.0</LanguageVersion>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
 

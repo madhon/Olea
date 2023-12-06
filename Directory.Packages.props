@@ -1,15 +1,16 @@
 <Project>
   <ItemGroup>
     <!-- System packages -->
-	  <PackageVersion Include="System.Text.Json" Version="7.0.4" />
+	  <PackageVersion Include="System.Text.Json" Version="8.0.0" />
     <!-- Microsoft packages -->
-    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
-    <PackageVersion Include="Microsoft.Extensions.Hosting.WindowsServices" Version="7.0.1" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting.WindowsServices" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Orleans.Sdk" Version="7.2.4" />
     <PackageVersion Include="Microsoft.Orleans.Server" Version="7.2.4" />
     <PackageVersion Include="Microsoft.Orleans.Client" Version="7.2.4" />
+    <PackageVersion Include="Microsoft.OpenApi" Version="1.6.11" />
     <!-- 3rd party packages -->
     <PackageVersion Include="RestEase" Version="1.6.4" />
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
