@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    <AccelerateBuildsInVisualStudio >true</AccelerateBuildsInVisualStudio>
   </PropertyGroup>
 
 

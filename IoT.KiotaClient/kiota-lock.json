@@ -1,0 +1,32 @@
+{
+  "descriptionHash": "C8EDBFFBDAE5A742188CDA0FFB8C7906A4E40DAF7985E4B9AA8E28A8496C001781D0F2E15A74CBC85B33E7E9C9DE438C8804264221BB935CD677FDEDC4E7AD92",
+  "descriptionLocation": "http://localhost:56124/docs/v1/openapi.json",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.7.0",
+  "clientClassName": "OleaClient",
+  "clientNamespaceName": "IoT.KiotaClient",
+  "language": "CSharp",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
+  "includeAdditionalData": true,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain",
+    "application/x-www-form-urlencoded",
+    "multipart/form-data"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}
