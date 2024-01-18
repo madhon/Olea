@@ -11,4 +11,10 @@
     <ProjectReference Include="..\IoT.KiotaClient\IoT.KiotaClient.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="IoT.KiotaClient">
+      <HintPath>bin\Debug\net80\IoT.KiotaClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

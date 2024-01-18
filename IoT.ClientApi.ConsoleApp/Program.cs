@@ -9,6 +9,7 @@
     using System.Text.Json;
     using System.Text.Json.Serialization;
     using System.Threading.Tasks;
+    using IoT.KiotaClient.Models;
 
     public static class Program
     {
@@ -19,21 +20,15 @@
             var authProvider = new AnonymousAuthenticationProvider();
             var adaptor = new HttpClientRequestAdapter(authProvider);
             adaptor.BaseUrl = "http://localhost:56124";
-
             var client = new OleaClient(adaptor);
-
 
             Console.WriteLine("Setting Temp");
 
             await client.Api.Temperature[1].PostAsync(56d);
 
-
             var res2 = await client.Api.Temperature[1].GetAsync();
 
-            var tr = Deserialize<TemperatureResult>(res2);
-
-            Console.WriteLine($"Id: {tr.Id}  Value: {tr.Value}");
-
+            Console.WriteLine($"Id: {res2.Id}  Value: {res2.Value}");
 
             Debugger.Break();
         }

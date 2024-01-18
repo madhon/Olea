@@ -32,6 +32,10 @@ namespace IoT.KiotaClient {
             ApiClientBuilder.RegisterDefaultDeserializer<JsonParseNodeFactory>();
             ApiClientBuilder.RegisterDefaultDeserializer<TextParseNodeFactory>();
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
+            if (string.IsNullOrEmpty(RequestAdapter.BaseUrl)) {
+                RequestAdapter.BaseUrl = "http://localhost:56124";
+            }
+            PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
         }
     }
 }
