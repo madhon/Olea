@@ -16,6 +16,12 @@ builder.Services.AddCors(options =>
         .AllowCredentials());
 });
 
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.TypeInfoResolverChain.Insert(
+        0, AppJsonSerializerContext.Default);
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(config =>
 {
