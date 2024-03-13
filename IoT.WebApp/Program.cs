@@ -10,7 +10,7 @@ builder.Host.UseOrleansClient(client =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAny", builder => builder.AllowAnyOrigin()
+    options.AddPolicy("AllowAny", cors => cors.AllowAnyOrigin()
         .AllowAnyMethod()
         .AllowAnyHeader()
         .AllowCredentials());
