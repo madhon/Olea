@@ -16,6 +16,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
 	<PackageReference Include="Microsoft.Orleans.Client"  />
 	<PackageReference Include="Swashbuckle.AspNetCore" />
+    <PackageReference Include="Microsoft.OpenApi" />
   </ItemGroup>
 
   <ItemGroup>
