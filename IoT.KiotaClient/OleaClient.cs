@@ -15,16 +15,19 @@ namespace IoT.KiotaClient {
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    public class OleaClient : BaseRequestBuilder {
+    public class OleaClient : BaseRequestBuilder 
+    {
         /// <summary>The api property</summary>
-        public ApiRequestBuilder Api { get =>
-            new ApiRequestBuilder(PathParameters, RequestAdapter);
+        public ApiRequestBuilder Api
+        {
+            get => new ApiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new OleaClient and sets the default values.
+        /// Instantiates a new <see cref="OleaClient"/> and sets the default values.
         /// </summary>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OleaClient(IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}", new Dictionary<string, object>()) {
+        public OleaClient(IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}", new Dictionary<string, object>())
+        {
             ApiClientBuilder.RegisterDefaultSerializer<JsonSerializationWriterFactory>();
             ApiClientBuilder.RegisterDefaultSerializer<TextSerializationWriterFactory>();
             ApiClientBuilder.RegisterDefaultSerializer<FormSerializationWriterFactory>();
@@ -32,7 +35,8 @@ namespace IoT.KiotaClient {
             ApiClientBuilder.RegisterDefaultDeserializer<JsonParseNodeFactory>();
             ApiClientBuilder.RegisterDefaultDeserializer<TextParseNodeFactory>();
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
-            if (string.IsNullOrEmpty(RequestAdapter.BaseUrl)) {
+            if (string.IsNullOrEmpty(RequestAdapter.BaseUrl))
+            {
                 RequestAdapter.BaseUrl = "http://localhost:56124";
             }
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);

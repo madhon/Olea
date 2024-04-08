@@ -10,35 +10,48 @@ namespace IoT.KiotaClient.Api.Temperature {
     /// <summary>
     /// Builds and executes requests for operations under \api\temperature
     /// </summary>
-    public class TemperatureRequestBuilder : BaseRequestBuilder {
+    public class TemperatureRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the IoT.KiotaClient.api.temperature.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        public TemperatureItemRequestBuilder this[int position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("id", position);
-            return new TemperatureItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        /// <returns>A <see cref="TemperatureItemRequestBuilder"/></returns>
+        public TemperatureItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("id", position);
+                return new TemperatureItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>Gets an item from the IoT.KiotaClient.api.temperature.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="TemperatureItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public TemperatureItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("id", position);
-            return new TemperatureItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public TemperatureItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("id", position);
+                return new TemperatureItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
-        /// Instantiates a new TemperatureRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TemperatureRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TemperatureRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/temperature", pathParameters) {
+        public TemperatureRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/temperature", pathParameters)
+        {
         }
         /// <summary>
-        /// Instantiates a new TemperatureRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TemperatureRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TemperatureRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/temperature", rawUrl) {
+        public TemperatureRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/temperature", rawUrl)
+        {
         }
     }
 }
