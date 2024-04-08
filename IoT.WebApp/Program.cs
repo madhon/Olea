@@ -58,7 +58,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseRouting();
 
-app.MapGetTemperatureEndpoint();
-app.MapPostTemperatureEndpoint();
+app.MapTemperatureApi();
 
 app.Run();

@@ -6,7 +6,7 @@ public static class PostTemperatureEndpoint
 {
     public static IEndpointRouteBuilder MapPostTemperatureEndpoint(this IEndpointRouteBuilder builder)
     {
-        builder.MapPost("api/temperature/{id:int}",
+        builder.MapPost("{id:int}",
                 async Task<Results<Ok, ProblemHttpResult>> (IClusterClient clusterClient, int id, [FromBody] double value) =>
                 {
                     var grain = clusterClient.GetGrain<IDeviceGrain>(id);
