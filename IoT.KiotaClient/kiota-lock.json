@@ -1,14 +1,15 @@
 {
-  "descriptionHash": "7DDA6EE996330AC003260CEFB15A3D26C5AD14ECBE2B37C330259756CF91ECAE02B02B8A9E3095E8D837A9E49FF276EB1ED5EBFF399B0A69AF9D0B736C142CF8",
+  "descriptionHash": "2EC6F8416D0F823EAC82A1B966E2C1AC3BE5CB794705C4E307C51C1EAE9FB6CAF7FE1AED4EA3F77A2B65C5E8F6FFA387F379D66219AC877C033E7E99A79D5D12",
   "descriptionLocation": "http://localhost:56124/docs/v1/openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.13.0",
+  "kiotaVersion": "1.16.0",
   "clientClassName": "OleaClient",
   "clientNamespaceName": "IoT.KiotaClient",
   "language": "CSharp",
   "usesBackingStore": false,
   "excludeBackwardCompatible": false,
   "includeAdditionalData": true,
+  "disableSSLValidation": false,
   "serializers": [
     "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
     "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
