@@ -2,7 +2,7 @@
   "descriptionHash": "2EC6F8416D0F823EAC82A1B966E2C1AC3BE5CB794705C4E307C51C1EAE9FB6CAF7FE1AED4EA3F77A2B65C5E8F6FFA387F379D66219AC877C033E7E99A79D5D12",
   "descriptionLocation": "http://localhost:56124/docs/v1/openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.16.0",
+  "kiotaVersion": "1.17.0",
   "clientClassName": "OleaClient",
   "clientNamespaceName": "IoT.KiotaClient",
   "language": "CSharp",
