@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net80</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
 	  <LanguageVersion>12.0</LanguageVersion>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <Reference Include="IoT.KiotaClient">
-      <HintPath>bin\Debug\net80\IoT.KiotaClient.dll</HintPath>
+      <HintPath>bin\Debug\net8.0\IoT.KiotaClient.dll</HintPath>
     </Reference>
   </ItemGroup>
 
