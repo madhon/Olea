@@ -5,7 +5,7 @@ public static class GetTemperatureEndpoint
     public static IEndpointRouteBuilder MapGetTemperatureEndpoint(this IEndpointRouteBuilder builder)
     {
         builder.MapGet("{id:int}",
-            async Task<Results<Ok<TemperatureResultModel>, ProblemHttpResult>> (IClusterClient clusterClient, int id) =>
+            async Task<Results<Ok<TemperatureResultModel>, ProblemHttpResult>> (IClusterClient clusterClient, CancellationToken ct, int id) =>
             {
                 var grain = clusterClient.GetGrain<IDeviceGrain>(id);
                 var value = await grain.GetTemperatureAsync().ConfigureAwait(false);

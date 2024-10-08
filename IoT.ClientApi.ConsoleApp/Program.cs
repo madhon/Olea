@@ -27,7 +27,7 @@
 
             var res2 = await client.Api.Temperature[1].GetAsync();
 
-            Console.WriteLine($"Id: {res2.Id}  Value: {res2.Value}");
+            Console.WriteLine($"Id: {res2!.Id}  Value: {res2!.Value}");
 
             Debugger.Break();
         }

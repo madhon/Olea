@@ -8,8 +8,8 @@
 
     public class CacheGrain<T> : Grain, ICacheGrain<T>
     {
-        Immutable<T> item = new Immutable<T>(default(T));
-        TimeSpan timeToKeep = TimeSpan.Zero;
+        private Immutable<T> item = new(default);
+        private TimeSpan timeToKeep = TimeSpan.Zero;
 
         public Task Set(Immutable<T> item, TimeSpan timeToKeep)
         {

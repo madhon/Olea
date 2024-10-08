@@ -44,7 +44,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger(c =>
     {
         c.RouteTemplate = "docs/{documentName}/openapi.json";
-        c.PreSerializeFilters.Add((swagger, httpReq) => swagger.Servers = new List<OpenApiServer> { new OpenApiServer { Url = $"{httpReq.Scheme}://{httpReq.Host.Value}{httpReq.PathBase.Value}" } });
+        c.PreSerializeFilters.Add((swagger, httpReq) => swagger.Servers = new List<OpenApiServer>
+            { new() { Url = $"{httpReq.Scheme}://{httpReq.Host.Value}{httpReq.PathBase.Value}" } });
     });
     
     app.UseSwaggerUI(c =>
