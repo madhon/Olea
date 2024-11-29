@@ -14,6 +14,7 @@ public static class GetTemperatureEndpoint
                 return TypedResults.Ok(model);
             })
             .WithName("GetTemperature")
+
             .WithDescription("Get the current temperature for the id specified")
             .Produces<TemperatureResultModel>()
             .ProducesProblem(400);
