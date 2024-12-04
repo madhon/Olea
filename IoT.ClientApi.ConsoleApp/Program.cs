@@ -1,47 +1,32 @@
-﻿namespace IoT.ClientApi.ConsoleApp
+﻿namespace IoT.ClientApi.ConsoleApp;
+
+using IoT.KiotaClient;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
+
+public static class Program
 {
-    using IoT.KiotaClient;
-    using Microsoft.Kiota.Abstractions.Authentication;
-    using Microsoft.Kiota.Http.HttpClientLibrary;
-    using System;
-    using System.Diagnostics;
-    using System.IO;
-    using System.Text.Json;
-    using System.Text.Json.Serialization;
-    using System.Threading.Tasks;
+    public static void Main() => MainAsync().GetAwaiter().GetResult();
 
-    public static class Program
+    private static async Task MainAsync()
     {
-        public static void Main() => MainAsync().GetAwaiter().GetResult();
+        var authProvider = new AnonymousAuthenticationProvider();
+        var adaptor = new HttpClientRequestAdapter(authProvider);
+        adaptor.BaseUrl = "http://localhost:56124";
+        var client = new OleaClient(adaptor);
 
-        private static async Task MainAsync()
-        {
-            var authProvider = new AnonymousAuthenticationProvider();
-            var adaptor = new HttpClientRequestAdapter(authProvider);
-            adaptor.BaseUrl = "http://localhost:56124";
-            var client = new OleaClient(adaptor);
+        Console.WriteLine("Setting Temp");
 
-            Console.WriteLine("Setting Temp");
+        await client.Api.Temperature[1].PostAsync(56d);
 
-            await client.Api.Temperature[1].PostAsync(56d);
+        var res2 = await client.Api.Temperature[1].GetAsync();
 
-            var res2 = await client.Api.Temperature[1].GetAsync();
+        Console.WriteLine($"Id: {res2!.Id}  Value: {res2!.Value}");
 
-            Console.WriteLine($"Id: {res2!.Id}  Value: {res2!.Value}");
-
-            Debugger.Break();
-        }
-
-        public static T Deserialize<T>(Stream s)
-        {
-            var opts = new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                NumberHandling = JsonNumberHandling.AllowReadingFromString
-            };
-
-            return JsonSerializer.Deserialize<T>(s, opts);
-        }
+        Debugger.Break();
     }
+
 }

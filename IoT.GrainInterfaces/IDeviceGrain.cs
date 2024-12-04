@@ -1,15 +1,14 @@
 using System.Threading.Tasks;
 using Orleans;
 
-namespace IoT.GrainInterfaces
+namespace IoT.GrainInterfaces;
+
+[Alias("IoT.GrainInterfaces.IDeviceGrain")]
+public interface IDeviceGrain : IGrainWithIntegerKey
 {
-    [Alias("IoT.GrainInterfaces.IDeviceGrain")]
-    public interface IDeviceGrain : IGrainWithIntegerKey
-    {
-        [Alias("SetTemperatureAsync")]
-        Task SetTemperatureAsync(double value);
+    [Alias("SetTemperatureAsync")]
+    Task SetTemperatureAsync(double value);
         
-        [Alias("GetTemperatureAsync")]
-        ValueTask<double> GetTemperatureAsync();
-    }
+    [Alias("GetTemperatureAsync")]
+    ValueTask<double> GetTemperatureAsync();
 }

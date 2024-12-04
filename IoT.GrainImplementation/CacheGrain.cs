@@ -1,39 +1,38 @@
-﻿namespace IoT.GrainImplementation
+﻿namespace IoT.GrainImplementation;
+
+using System;
+using System.Threading.Tasks;
+using IoT.GrainInterfaces;
+using Orleans;
+using Orleans.Concurrency;
+
+public class CacheGrain<T> : Grain, ICacheGrain<T>
 {
-    using System;
-    using System.Threading.Tasks;
-    using IoT.GrainInterfaces;
-    using Orleans;
-    using Orleans.Concurrency;
+    private Immutable<T> item = new(default);
+    private TimeSpan timeToKeep = TimeSpan.Zero;
 
-    public class CacheGrain<T> : Grain, ICacheGrain<T>
+    public Task Set(Immutable<T> item, TimeSpan timeToKeep)
     {
-        private Immutable<T> item = new(default);
-        private TimeSpan timeToKeep = TimeSpan.Zero;
+        this.item = item;
+        this.timeToKeep = timeToKeep == TimeSpan.Zero ? TimeSpan.FromHours(2) : timeToKeep;
+        this.DelayDeactivation(timeToKeep);
+        return Task.FromResult(0);
+    }
 
-        public Task Set(Immutable<T> item, TimeSpan timeToKeep)
-        {
-            this.item = item;
-            this.timeToKeep = timeToKeep == TimeSpan.Zero ? TimeSpan.FromHours(2) : timeToKeep;
-            this.DelayDeactivation(timeToKeep);
-            return Task.FromResult(0);
-        }
+    public Task<Immutable<T>> Get()
+    {
+        return Task.FromResult(this.item);
+    }
 
-        public Task<Immutable<T>> Get()
-        {
-            return Task.FromResult(this.item);
-        }
+    public Task Clear()
+    {
+        this.DeactivateOnIdle();
+        return Task.FromResult(0);
+    }
 
-        public Task Clear()
-        {
-            this.DeactivateOnIdle();
-            return Task.FromResult(0);
-        }
-
-        public Task Refresh()
-        {
-            this.DelayDeactivation(timeToKeep);
-            return Task.FromResult(0);
-        }
+    public Task Refresh()
+    {
+        this.DelayDeactivation(timeToKeep);
+        return Task.FromResult(0);
     }
 }

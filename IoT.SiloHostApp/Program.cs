@@ -1,6 +1,5 @@
 ﻿Console.Title = "SilHost";
 
-
 await Host.CreateDefaultBuilder()
     .UseWindowsService()
     .UseOrleans(builder =>
