@@ -12,7 +12,7 @@ namespace IoT.KiotaClient.Api.Temperature
     /// <summary>
     /// Builds and executes requests for operations under \api\temperature
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TemperatureRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the IoT.KiotaClient.api.temperature.item collection</summary>

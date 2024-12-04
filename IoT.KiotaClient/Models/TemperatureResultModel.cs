@@ -7,15 +7,24 @@ using System.IO;
 using System;
 namespace IoT.KiotaClient.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TemperatureResultModel : IParsable
+    public partial class TemperatureResultModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
         public int? Id { get; set; }
         /// <summary>The value property</summary>
         public double? Value { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::IoT.KiotaClient.Models.TemperatureResultModel"/> and sets the default values.
+        /// </summary>
+        public TemperatureResultModel()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace IoT.KiotaClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("id", Id);
             writer.WriteDoubleValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
