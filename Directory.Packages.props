@@ -19,7 +19,6 @@
     <PackageVersion Include="Azure.Core" Version="1.44.1" />
     <!-- 3rd party packages -->
     <PackageVersion Include="RestEase" Version="1.6.4" />
-    <PackageVersion Include="Swashbuckle.AspNetCore" Version="7.1.0" />
     <PackageVersion Include="Scalar.AspNetCore" Version="1.2.45" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
     <!-- Kiota -->
