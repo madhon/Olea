@@ -15,14 +15,14 @@
     <PackageVersion Include="Microsoft.Orleans.Sdk" Version="9.0.1" />
     <PackageVersion Include="Microsoft.Orleans.Server" Version="9.0.1" />
     <PackageVersion Include="Microsoft.Orleans.Client" Version="9.0.1" />
-    <PackageVersion Include="Microsoft.OpenApi" Version="1.6.22" />
+    <PackageVersion Include="Microsoft.OpenApi" Version="1.6.23" />
     <PackageVersion Include="Azure.Core" Version="1.44.1" />
     <!-- 3rd party packages -->
     <PackageVersion Include="RestEase" Version="1.6.4" />
-    <PackageVersion Include="Scalar.AspNetCore" Version="1.2.45" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="1.2.72" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
     <!-- Kiota -->
-    <PackageVersion Include="Microsoft.Kiota.Bundle" Version="1.15.2" />
-    <PackageVersion Include="Microsoft.Kiota.Authentication.Azure" Version="1.15.2" />
+    <PackageVersion Include="Microsoft.Kiota.Bundle" Version="1.16.1" />
+    <PackageVersion Include="Microsoft.Kiota.Authentication.Azure" Version="1.16.1" />
   </ItemGroup>
 </Project>
