@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "F8C899492851C58F0374DA6B29048CB7DC87FFFB1723FCCD6652612A4EC01BEBDB8D271967BDED5C14B9EAD6CC91C80B6E821923FC19ABF653B1B67A5740D319",
+  "descriptionHash": "178A159DD55252F8AD6F976CE2BDE4B6B5B8194AC744131229CDAB66FC13AF0A0FD88B582AB3ACC3BD62E9934D4DA16BE9833A4DCC1E2D4F4F92C6AC8D9C2738",
   "descriptionLocation": "http://localhost:56124/openapi/v1.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.21.0",
+  "kiotaVersion": "1.22.3",
   "clientClassName": "OleaClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "IoT.KiotaClient",
