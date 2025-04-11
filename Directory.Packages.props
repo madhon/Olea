@@ -1,17 +1,22 @@
 <Project>
   <ItemGroup>
     <!-- System packages -->
-    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
-    <PackageVersion Include="Microsoft.Extensions.ApiDescription.Server" Version="9.0.3" />
-    <PackageVersion Include="System.Text.Json" Version="9.0.3" />
-    <PackageVersion Include="System.Runtime.Caching" Version="9.0.3" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
+    <PackageVersion Include="Microsoft.Extensions.ApiDescription.Server" Version="9.0.4" />
+    <PackageVersion Include="System.Text.Json" Version="9.0.4" />
+    <PackageVersion Include="System.Runtime.Caching" Version="9.0.4" />
+    <PackageVersion Include="System.IO.Pipelines" Version="9.0.4" />
+    <PackageVersion Include="System.Collections.Immutable" Version="9.0.4" />
+    <PackageVersion Include="System.Threading.Tasks" Version="4.3.0" />
+    <PackageVersion Include="System.Threading.Tasks.Extensions" Version="4.6.3" />
+    <PackageVersion Include="System.Threading.Channels" Version="9.0.4" />
     <!-- Microsoft packages -->
-    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="9.0.3" />
-    <PackageVersion Include="Microsoft.Extensions.Hosting.WindowsServices" Version="9.0.3" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="9.0.3" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.3" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.3" />
-    <PackageVersion Include="Microsoft.Extensions.Telemetry.Abstractions" Version="9.3.0" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="9.0.4" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting.WindowsServices" Version="9.0.4" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="9.0.4" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.4" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.4" />
+    <PackageVersion Include="Microsoft.Extensions.Telemetry.Abstractions" Version="9.4.0" />
     <PackageVersion Include="Microsoft.Orleans.Sdk" Version="9.1.2" />
     <PackageVersion Include="Microsoft.Orleans.Server" Version="9.1.2" />
     <PackageVersion Include="Microsoft.Orleans.Client" Version="9.1.2" />
@@ -19,7 +24,7 @@
     <PackageVersion Include="Azure.Core" Version="1.45.0" />
     <!-- 3rd party packages -->
     <PackageVersion Include="RestEase" Version="1.6.4" />
-    <PackageVersion Include="Scalar.AspNetCore" Version="2.1.7" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.1.11" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
     <!-- Kiota -->
     <PackageVersion Include="Microsoft.Kiota.Bundle" Version="1.17.2" />

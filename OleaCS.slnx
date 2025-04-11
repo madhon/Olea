@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Project Path="IoT.ClientApi.ConsoleApp/IoT.ClientApi.ConsoleApp.csproj" />
+  <Project Path="IoT.ClientApi/IoT.ClientApi.csproj" />
+  <Project Path="IoT.GrainImplementation/IoT.GrainImplementation.csproj" />
+  <Project Path="IoT.GrainInterfaces/IoT.GrainInterfaces.csproj" />
+  <Project Path="IoT.KiotaClient/IoT.KiotaClient.csproj" />
+  <Project Path="IoT.SiloHostApp/IoT.SiloHostApp.csproj" />
+  <Project Path="IoT.WebApp/IoT.WebApp.csproj" />
+</Solution>
