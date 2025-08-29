@@ -24,4 +24,8 @@
     <ProjectReference Include="..\IoT.GrainImplementation\IoT.GrainImplementation.csproj" />
   </ItemGroup>
 
+    <ItemGroup>
+        <AdditionalFiles Include="..\BannedSymbols.txt" />
+    </ItemGroup>    
+    
 </Project>

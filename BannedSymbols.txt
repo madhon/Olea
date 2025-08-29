@@ -1,0 +1,89 @@
+// Blocked packages
+N:Autofac;Use built-in dependency injection instead of Autofac
+N:AutoMapper;Use Mapperly, built-in mapping features or manual mapping instead of AutoMapper
+N:Newtonsoft.Json;Use System.Text.Json instead of Newtonsoft.Json
+
+// Use UTC instead of local time
+P:System.DateTime.Now;Use System.DateTime.UtcNow instead
+P:System.DateTimeOffset.Now;Use System.DateTimeOffset.UtcNow instead
+
+// localisation issues
+M:System.Globalization.CultureInfo.#ctor(System.String);Use CultureInfo.GetCultureInfo
+
+// Use ValueTuples instead of Tuples
+T:System.Tuple`1;Use System.ValueTuple`1
+T:System.Tuple`2;Use System.ValueTuple`2
+T:System.Tuple`3;Use System.ValueTuple`3
+T:System.Tuple`4;Use System.ValueTuple`4
+T:System.Tuple`5;Use System.ValueTuple`5
+T:System.Tuple`6;Use System.ValueTuple`6
+T:System.Tuple`7;Use System.ValueTuple`7
+T:System.Tuple`8;Use System.ValueTuple`8
+
+// Non-generic collections
+T:System.Collections.ArrayList;Use List<T>
+T:System.Collections.Hashtable;Use Dictionary<TKey, TValue>
+
+// Blocking Task operations
+P:System.Threading.Tasks.Task.Result;Await it
+M:System.Threading.Tasks.Task.Wait;Await it
+M:System.Threading.Tasks.Task.GetAwaiter;Await it
+M:System.Runtime.CompilerServices.TaskAwaiter.GetResult;Await it
+M:System.Threading.Tasks.Task.WaitAll`1;Use await Task.WhenAll()
+
+// Unsafe numeric conversion
+M:System.Convert.ToByte;Use byte.TryParse()
+M:System.Convert.ToInt16;Use short.TryParse()
+M:System.Convert.ToInt32;Use int.TryParse()
+M:System.Convert.ToInt64;Use long.TryParse()
+M:System.Convert.ToSingle;Use float.TryParse()
+M:System.Convert.ToDouble;Use double.TryParse()
+
+// String comparison
+F:System.StringComparison.InvariantCulture;InvariantCulture performs a linguistic comparison. Most of the time Ordinal is the correct one.
+F:System.StringComparison.InvariantCultureIgnoreCase;InvariantCultureIgnoreCase performs a linguistic comparison. Most of the time OrdinalIgnoreCase is the correct one.
+P:System.StringComparer.InvariantCulture;InvariantCulture performs a linguistic comparison. Most of the time Ordinal is the correct one.
+P:System.StringComparer.InvariantCultureIgnoreCase;InvariantCultureIgnoreCase performs a linguistic comparison. Most of the time OrdinalIgnoreCase is the correct one.
+
+// EF Core stuff
+M:Microsoft.EntityFrameworkCore.DbContext.FindAsync``1(System.Object[],System.Threading.CancellationToken)
+// M:Microsoft.EntityFrameworkCore.DbContext.Set``1
+M:Microsoft.EntityFrameworkCore.DbContext.Set``1(System.String)
+M:Microsoft.EntityFrameworkCore.DbContext.SaveChanges
+M:Microsoft.EntityFrameworkCore.DbContext.SaveChanges(System.Boolean)
+M:Microsoft.EntityFrameworkCore.DbContext.add_SavingChanges(System.EventHandler{Microsoft.EntityFrameworkCore.SavingChangesEventArgs})
+M:Microsoft.EntityFrameworkCore.DbContext.remove_SavingChanges(System.EventHandler{Microsoft.EntityFrameworkCore.SavingChangesEventArgs})
+M:Microsoft.EntityFrameworkCore.DbContext.add_SavedChanges(System.EventHandler{Microsoft.EntityFrameworkCore.SavedChangesEventArgs})
+M:Microsoft.EntityFrameworkCore.DbContext.remove_SavedChanges(System.EventHandler{Microsoft.EntityFrameworkCore.SavedChangesEventArgs})
+M:Microsoft.EntityFrameworkCore.DbContext.add_SaveChangesFailed(System.EventHandler{Microsoft.EntityFrameworkCore.SaveChangesFailedEventArgs})
+M:Microsoft.EntityFrameworkCore.DbContext.remove_SaveChangesFailed(System.EventHandler{Microsoft.EntityFrameworkCore.SaveChangesFailedEventArgs})
+M:Microsoft.EntityFrameworkCore.DbContext.Entry``1(``0)
+M:Microsoft.EntityFrameworkCore.DbContext.Entry(System.Object)
+M:Microsoft.EntityFrameworkCore.DbContext.Add``1(``0)
+M:Microsoft.EntityFrameworkCore.DbContext.AddAsync``1(``0,System.Threading.CancellationToken)
+M:Microsoft.EntityFrameworkCore.DbContext.Attach``1(``0)
+M:Microsoft.EntityFrameworkCore.DbContext.Update``1(``0)
+M:Microsoft.EntityFrameworkCore.DbContext.Add(System.Object)
+M:Microsoft.EntityFrameworkCore.DbContext.AddAsync(System.Object,System.Threading.CancellationToken)
+M:Microsoft.EntityFrameworkCore.DbContext.Attach(System.Object)
+M:Microsoft.EntityFrameworkCore.DbContext.Update(System.Object)
+M:Microsoft.EntityFrameworkCore.DbContext.AddRange(System.Object[])
+M:Microsoft.EntityFrameworkCore.DbContext.AddRangeAsync(System.Object[])
+M:Microsoft.EntityFrameworkCore.DbContext.AttachRange(System.Object[])
+M:Microsoft.EntityFrameworkCore.DbContext.UpdateRange(System.Object[])
+M:Microsoft.EntityFrameworkCore.DbContext.RemoveRange(System.Object[])
+M:Microsoft.EntityFrameworkCore.DbContext.AddRange(System.Collections.Generic.IEnumerable{System.Object})
+M:Microsoft.EntityFrameworkCore.DbContext.AddRangeAsync(System.Collections.Generic.IEnumerable{System.Object},System.Threading.CancellationToken)
+M:Microsoft.EntityFrameworkCore.DbContext.AttachRange(System.Collections.Generic.IEnumerable{System.Object})
+M:Microsoft.EntityFrameworkCore.DbContext.UpdateRange(System.Collections.Generic.IEnumerable{System.Object})
+M:Microsoft.EntityFrameworkCore.DbContext.RemoveRange(System.Collections.Generic.IEnumerable{System.Object})
+M:Microsoft.EntityFrameworkCore.DbContext.Find(System.Type,System.Object[])
+M:Microsoft.EntityFrameworkCore.DbContext.FindAsync(System.Type,System.Object[])
+M:Microsoft.EntityFrameworkCore.DbContext.FindAsync(System.Type,System.Object[],System.Threading.CancellationToken)
+M:Microsoft.EntityFrameworkCore.DbContext.Find``1(System.Object[])
+M:Microsoft.EntityFrameworkCore.DbContext.FindAsync``1(System.Object[])
+
+// More EF Core
+// TODO: figure out how to actually reference a method of a generic class 'cause this shit doesn't work
+M:Microsoft.EntityFrameworkCore.DbSet`1.AddAsync(``0);Use .Add()
+M:Microsoft.EntityFrameworkCore.DbSet`1.AddAsync`1(``0,System.Threading.CancellationToken);Use .Add()

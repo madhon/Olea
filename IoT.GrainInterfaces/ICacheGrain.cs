@@ -9,10 +9,10 @@ using Orleans.Concurrency;
 public interface ICacheGrain<T> : IGrainWithStringKey
 {
     [Alias("Set")]
-    Task Set(Immutable<T> item, TimeSpan timeToKeep);
+    Task SetValue(Immutable<T> item, TimeSpan timeToKeep);
         
     [Alias("Get")]
-    Task<Immutable<T>> Get();
+    Task<Immutable<T>> GetValue();
         
     [Alias("Clear")]
     Task Clear();

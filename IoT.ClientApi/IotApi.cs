@@ -1,11 +1,12 @@
 ﻿namespace IoT.ClientApi
 {
+    using System;
     using System.Threading.Tasks;
     using RestEase;
 
     public class IotApi : IIoTApi
     {
-        public string Host { get; set; }
+        public Uri Host { get; set; }
 
         public async Task<TemperatureResult> GetTemperatureAsync(int id)
         {
@@ -21,10 +22,10 @@
 
         public static IIoTApi Create()
         {
-            return Create("http://localhost:56124/");
+            return Create( new Uri("http://localhost:56124/"));
         }
 
-        public static IIoTApi Create(string hostUri)
+        public static IIoTApi Create(Uri hostUri)
         {
             return new IotApi { Host = hostUri };
         }

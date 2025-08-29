@@ -2,7 +2,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 
-public static class PostTemperatureEndpoint
+internal static class PostTemperatureEndpoint
 {
     public static IEndpointRouteBuilder MapPostTemperatureEndpoint(this IEndpointRouteBuilder builder)
     {

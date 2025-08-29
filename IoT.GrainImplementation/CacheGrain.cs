@@ -11,7 +11,7 @@ public class CacheGrain<T> : Grain, ICacheGrain<T>
     private Immutable<T> item = new(default);
     private TimeSpan timeToKeep = TimeSpan.Zero;
 
-    public Task Set(Immutable<T> item, TimeSpan timeToKeep)
+    public Task SetValue(Immutable<T> item, TimeSpan timeToKeep)
     {
         this.item = item;
         this.timeToKeep = timeToKeep == TimeSpan.Zero ? TimeSpan.FromHours(2) : timeToKeep;
@@ -19,7 +19,7 @@ public class CacheGrain<T> : Grain, ICacheGrain<T>
         return Task.FromResult(0);
     }
 
-    public Task<Immutable<T>> Get()
+    public Task<Immutable<T>> GetValue()
     {
         return Task.FromResult(this.item);
     }

@@ -1,33 +1,35 @@
 <Project>
   <ItemGroup>
     <!-- System packages -->
-    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.7" />
-    <PackageVersion Include="Microsoft.Extensions.ApiDescription.Server" Version="9.0.7" />
-    <PackageVersion Include="System.Text.Json" Version="9.0.7" />
-    <PackageVersion Include="System.Runtime.Caching" Version="9.0.7" />
-    <PackageVersion Include="System.IO.Pipelines" Version="9.0.7" />
-    <PackageVersion Include="System.Collections.Immutable" Version="9.0.7" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.8" />
+    <PackageVersion Include="Microsoft.Extensions.ApiDescription.Server" Version="9.0.8" />
+    <PackageVersion Include="System.Text.Json" Version="9.0.8" />
+    <PackageVersion Include="System.Runtime.Caching" Version="9.0.8" />
+    <PackageVersion Include="System.IO.Pipelines" Version="9.0.8" />
+    <PackageVersion Include="System.Collections.Immutable" Version="9.0.8" />
     <PackageVersion Include="System.Threading.Tasks" Version="4.3.0" />
     <PackageVersion Include="System.Threading.Tasks.Extensions" Version="4.6.3" />
-    <PackageVersion Include="System.Threading.Channels" Version="9.0.7" />
+    <PackageVersion Include="System.Threading.Channels" Version="9.0.8" />
     <!-- Microsoft packages -->
-    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="9.0.7" />
-    <PackageVersion Include="Microsoft.Extensions.Hosting.WindowsServices" Version="9.0.7" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="9.0.7" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.7" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.7" />
-    <PackageVersion Include="Microsoft.Extensions.Telemetry.Abstractions" Version="9.7.0" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="9.0.8" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting.WindowsServices" Version="9.0.8" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="9.0.8" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.8" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.8" />
+    <PackageVersion Include="Microsoft.Extensions.Telemetry.Abstractions" Version="9.8.0" />
     <PackageVersion Include="Microsoft.Orleans.Sdk" Version="9.2.1" />
     <PackageVersion Include="Microsoft.Orleans.Server" Version="9.2.1" />
     <PackageVersion Include="Microsoft.Orleans.Client" Version="9.2.1" />
-    <PackageVersion Include="Microsoft.OpenApi" Version="1.6.24" />
-    <PackageVersion Include="Azure.Core" Version="1.47.1" />
+    <PackageVersion Include="Microsoft.OpenApi" Version="[1.6.25]" />
+    <PackageVersion Include="Azure.Core" Version="1.47.3" />
     <!-- 3rd party packages -->
     <PackageVersion Include="RestEase" Version="1.6.4" />
-    <PackageVersion Include="Scalar.AspNetCore" Version="2.6.3" />
+    <PackageVersion Include="RestEase.SourceGenerator" Version="1.6.4"/>      
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.7.2" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" Version="4.14.0"/>      
     <!-- Kiota -->
-    <PackageVersion Include="Microsoft.Kiota.Bundle" Version="1.19.0" />
-    <PackageVersion Include="Microsoft.Kiota.Authentication.Azure" Version="1.19.0" />
+    <PackageVersion Include="Microsoft.Kiota.Bundle" Version="1.19.1" />
+    <PackageVersion Include="Microsoft.Kiota.Authentication.Azure" Version="1.19.1" />
   </ItemGroup>
 </Project>

@@ -10,4 +10,4 @@ using System.Text.Json.Serialization;
     GenerationMode = JsonSourceGenerationMode.Default)
 ]
 [JsonSerializable(typeof(TemperatureResultModel))]
-internal partial class AppJsonSerializerContext : JsonSerializerContext;
+internal sealed partial class AppJsonSerializerContext : JsonSerializerContext;

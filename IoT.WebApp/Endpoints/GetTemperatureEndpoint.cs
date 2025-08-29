@@ -1,6 +1,6 @@
 ﻿namespace IoT.WebApp.Endpoints;
 
-public static class GetTemperatureEndpoint
+internal static class GetTemperatureEndpoint
 {
     public static IEndpointRouteBuilder MapGetTemperatureEndpoint(this IEndpointRouteBuilder builder)
     {

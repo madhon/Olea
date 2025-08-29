@@ -11,4 +11,8 @@
     <ProjectReference Include="..\IoT.KiotaClient\IoT.KiotaClient.csproj" />
   </ItemGroup>
 
+
+    <ItemGroup>
+        <AdditionalFiles Include="..\BannedSymbols.txt" />
+    </ItemGroup>    
 </Project>
