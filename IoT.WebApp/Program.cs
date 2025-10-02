@@ -31,7 +31,11 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
     app.MapOpenApi();
-    app.MapScalarApiReference(opts => opts.DefaultFonts = false);
+    app.MapScalarApiReference(opts =>
+    {
+        opts.WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient);
+        opts.DefaultFonts = false;
+    });
 }
 
 app.UseRouting();
