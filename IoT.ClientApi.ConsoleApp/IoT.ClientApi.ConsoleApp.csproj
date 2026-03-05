@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <LanguageVersion>13.0</LanguageVersion>
+    <TargetFramework>net10.0</TargetFramework>
+    <LanguageVersion>14.0</LanguageVersion>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
 

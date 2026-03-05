@@ -1,4 +1,5 @@
 ﻿using IoT.WebApp.Endpoints;
+using Microsoft.OpenApi;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);

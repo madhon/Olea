@@ -5,14 +5,14 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:56124"
+      "applicationUrl": "http://localhost:5124"
     }
   },
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:56124",
+      "applicationUrl": "http://localhost:5124",
       "sslPort": 0
     }
   }

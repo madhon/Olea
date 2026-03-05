@@ -6,8 +6,15 @@ using System.Text.Json.Serialization;
     PropertyNameCaseInsensitive = true,
     PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase,
     DefaultIgnoreCondition = JsonIgnoreCondition.Never,
-    NumberHandling = JsonNumberHandling.AllowReadingFromString | JsonNumberHandling.WriteAsString,
+    NumberHandling = JsonNumberHandling.Strict,
     GenerationMode = JsonSourceGenerationMode.Default)
 ]
+[JsonSerializable(typeof(int))]
+[JsonSerializable(typeof(int?))]
+[JsonSerializable(typeof(double))]
+[JsonSerializable(typeof(double?))]
+
 [JsonSerializable(typeof(TemperatureResultModel))]
+
+[JsonSerializable(typeof(ProblemHttpResult))]
 internal sealed partial class AppJsonSerializerContext : JsonSerializerContext;
