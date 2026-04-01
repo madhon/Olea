@@ -22,6 +22,7 @@
 	<PackageReference Include="Microsoft.Orleans.Client"  />
     <PackageReference Include="Microsoft.OpenApi" />
     <PackageReference Include="Scalar.AspNetCore" />
+    <PackageReference Include="Scalar.AspNetCore.Microsoft" />
   </ItemGroup>
 
   <ItemGroup>

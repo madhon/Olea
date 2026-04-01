@@ -24,7 +24,7 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 });
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(opts => opts.AddScalarTransformers());
 
 var app = builder.Build();
 
