@@ -39,7 +39,7 @@ namespace IoT.KiotaClient
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
             if (string.IsNullOrEmpty(RequestAdapter.BaseUrl))
             {
-                RequestAdapter.BaseUrl = "http://localhost:56124";
+                RequestAdapter.BaseUrl = "http://localhost:5124";
             }
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
         }

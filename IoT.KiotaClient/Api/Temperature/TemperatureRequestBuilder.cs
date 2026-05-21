@@ -18,7 +18,7 @@ namespace IoT.KiotaClient.Api.Temperature
         /// <summary>Gets an item from the IoT.KiotaClient.api.temperature.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::IoT.KiotaClient.Api.Temperature.Item.TemperatureItemRequestBuilder"/></returns>
-        public global::IoT.KiotaClient.Api.Temperature.Item.TemperatureItemRequestBuilder this[int position]
+        public global::IoT.KiotaClient.Api.Temperature.Item.TemperatureItemRequestBuilder this[long position]
         {
             get
             {

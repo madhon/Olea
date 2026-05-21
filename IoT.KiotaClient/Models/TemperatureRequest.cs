@@ -9,31 +9,29 @@ namespace IoT.KiotaClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TemperatureResultModel : IAdditionalDataHolder, IParsable
+    public partial class TemperatureRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
-        public long? Id { get; set; }
         /// <summary>The value property</summary>
         public float? Value { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::IoT.KiotaClient.Models.TemperatureResultModel"/> and sets the default values.
+        /// Instantiates a new <see cref="global::IoT.KiotaClient.Models.TemperatureRequest"/> and sets the default values.
         /// </summary>
-        public TemperatureResultModel()
+        public TemperatureRequest()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::IoT.KiotaClient.Models.TemperatureResultModel"/></returns>
+        /// <returns>A <see cref="global::IoT.KiotaClient.Models.TemperatureRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::IoT.KiotaClient.Models.TemperatureResultModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::IoT.KiotaClient.Models.TemperatureRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::IoT.KiotaClient.Models.TemperatureResultModel();
+            return new global::IoT.KiotaClient.Models.TemperatureRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,7 +41,6 @@ namespace IoT.KiotaClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetLongValue(); } },
                 { "value", n => { Value = n.GetFloatValue(); } },
             };
         }
@@ -54,7 +51,6 @@ namespace IoT.KiotaClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteLongValue("id", Id);
             writer.WriteFloatValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
